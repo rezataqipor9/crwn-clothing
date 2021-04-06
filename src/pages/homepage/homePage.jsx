@@ -1,13 +1,15 @@
 import React from "react";
 import "./homepage.styles.scss";
-// import  MenuItem from '../../components/menu-item/menu-item'
+
  import Directory from '../../components/directory/directory-component'
 
-const HomePage = () => {
+const HomePage = (props) => {  
+  console.log(props)
   return (
-    <div className="homepage">     
-     <Directory/>
-     
+    <div className="homepage">
+
+     <Directory/>     
+
     </div>
   );
 };
