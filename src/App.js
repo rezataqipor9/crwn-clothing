@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
+import ShopPage from './pages/ShopPage/shopPage.jsx'
 import HomePage from "./pages/homepage/homePage";
 const Hat = (props) => {
   console.log(props)
@@ -16,7 +17,11 @@ function App() {
       <Router> 
       <Switch>
       <Route exact path='/' component={HomePage}/>      
+      <Route exact path='/shop' component={ShopPage}/>  
       <Route exact path='/shop/hats' component={Hat}/>  
+
+
+      
         </Switch>
       </Router>
     </div>
