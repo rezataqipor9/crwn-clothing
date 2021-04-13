@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import FormInput from "../formInput/forminput";
 import CustomButton from "../custom-button/custom-button";
-import {
-  signInWithPopup,
+import {  
   auth,
   userprofile,
 } from "../../Firebase/firebase.util";
@@ -54,7 +53,7 @@ class SignUp extends Component {
     return (
       <>
         <div className="sign-up">
-          <h2 className="title">I do not have a account</h2>
+          <h2 className="title">I do not have an account</h2>
           <span>Sign up with your email and password</span>
           <form onSubmit={this.handleSubmit} className="sign-up-form">
             <FormInput

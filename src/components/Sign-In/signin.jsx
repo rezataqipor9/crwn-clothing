@@ -5,7 +5,7 @@ import CustomButton from "../custom-button/custom-button";
 import {
   signInWithPopup,
   auth,
-  userprofile,
+  userprofile,signinwithphone
 } from "../../Firebase/firebase.util";
 
 class SignIn extends Component {
