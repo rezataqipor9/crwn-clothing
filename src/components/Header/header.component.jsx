@@ -3,11 +3,11 @@ import "./header.style.scss";
 import { Link } from "react-router-dom";
 import { auth } from "../../Firebase/firebase.util";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
-import { connect } from "react-redux";
-
-
-const HeaderComponent = ({ currentUser }) => {
-  
+import { connect} from "react-redux";
+import ShoppingIcon from '../shppingIcon/shoppingIcon'
+import CardDropDown from '../card-dropdown/card-dropdown'
+const HeaderComponent = ({ currentUser,isShow }) => {
+  console.log("isshow",isShow)
   return (
     <>
       <div className="header">
@@ -29,13 +29,18 @@ const HeaderComponent = ({ currentUser }) => {
             <Link className="option" to="/signin">
               SignIn
             </Link>
+
           )}
-        </div>
+          <ShoppingIcon />
+          </div>
+         {isShow?<CardDropDown/>:"" }  
       </div>
     </>
   );
 };
-const MapStateToProps = (state) => ({
-  currentUser: state.user.currentUser
+const MapStateToProps = ({user,isShow}) => ({
+  currentUser: user.currentUser,
+  isShow:isShow.isShow
 });
+
 export default connect(MapStateToProps)(HeaderComponent);

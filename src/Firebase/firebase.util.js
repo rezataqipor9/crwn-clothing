@@ -27,7 +27,7 @@ export const userprofile = async (user, additionalData) => {
   const snapshot = await firestordoc.get();
 
   if (!snapshot.exists) {
-    const { email, displayName, uid } = user;
+    const { email, displayName } = user;
     const createdAt = new Date();
     try {
       firestordoc.set({

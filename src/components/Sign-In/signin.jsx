@@ -4,8 +4,7 @@ import "./signin.style.scss";
 import CustomButton from "../custom-button/custom-button";
 import {
   signInWithPopup,
-  auth,
-  userprofile,signinwithphone
+  auth 
 } from "../../Firebase/firebase.util";
 
 class SignIn extends Component {

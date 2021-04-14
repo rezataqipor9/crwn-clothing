@@ -5,7 +5,7 @@ import ShopPage from "./pages/ShopPage/shopPage.jsx";
 import HomePage from "./pages/homepage/homePage";
 import HeaderComponent from "./components/Header/header.component";
 import SignInAndSigup from "./pages/signin-signup/signin-signup.jsx";
-import { auth, userprofile, firestore } from "./Firebase/firebase.util";
+import { auth, userprofile } from "./Firebase/firebase.util";
 import { setCurrentUser } from "./redux/user/user-action";
 import { connect } from "react-redux";
 class App extends Component {
