@@ -6,6 +6,7 @@ import "./shoppingIcon_style.scss";
 const ShoppingIcon = ({isDropDown,isShow,cardItem}) => {
   return (
     <div className="cart-icon" onClick={isDropDown}>
+    
       <Shppingicon className='shopping-icon' />
       <span className='item-count'>{cardItem.length}</span>
     </div>
