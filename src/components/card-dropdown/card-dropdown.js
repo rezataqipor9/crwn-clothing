@@ -3,10 +3,10 @@ import CustomButton from '../custom-button/custom-button'
 import './card-dropdown.style.scss'
 const CardDropDown = () => {
     return (  
-        <div className='cart-dropdown'> 
-        <div className='cart-items'/>
-        <CustomButton>Go To CheackOut</CustomButton>
-        </div>
+        <div className='cart-dropdown'>
+        <div className='cart-items' />
+        <CustomButton>GO TO CHECKOUT</CustomButton>
+      </div>
     );
 }
  

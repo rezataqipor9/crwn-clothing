@@ -6,3 +6,7 @@ export const setCurrentUser = (user) => ({
 export const isDropDown = () => ({
   type: ActionType.TOGGLE_DROPDOWN
   });
+export const addItem=(item)=>({
+  type:ActionType.ADD_ITEM,
+  payload:item
+})

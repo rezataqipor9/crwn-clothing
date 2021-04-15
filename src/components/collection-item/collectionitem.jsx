@@ -1,8 +1,14 @@
 import React from "react";
 import './collectionitem.style.scss'
-const CollectionItem = ({ name, price, imageUrl }) => {
+import CustomButton from '../custom-button/custom-button'
+import {connect} from 'react-redux'
+import {addItem} from '../../redux/user/user-action'
+const CollectionItem = ({ item,addItem,cardItem}) => {
+  const { name, price, imageUrl } = item;
+  
+  
   return (
-    <div className="collection-item">
+    <div onClick={()=>addItem(item)} className="collection-item">
       <div 
       className="image" 
       style={{ backgroundImage: `url(${imageUrl})` }}
@@ -10,9 +16,15 @@ const CollectionItem = ({ name, price, imageUrl }) => {
       <div className="collection-footer">
         <span className="name">{name}</span>
         <span className="price">{price}</span>
+        <CustomButton  inverted>
+        Add to cart
+      </CustomButton>
       </div>
     </div>
   );
 };
+const MapStateToProps=(state)=>({
+  cardItem:state.isShow.cardItem
+})
 
-export default CollectionItem;
+export default connect(MapStateToProps,{addItem})(CollectionItem);

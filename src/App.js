@@ -9,6 +9,10 @@ import { auth, userprofile } from "./Firebase/firebase.util";
 import { setCurrentUser } from "./redux/user/user-action";
 import { connect } from "react-redux";
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.myRef = React.createRef();
+  }
   
   unsubscribeFromAuth = null;
 
@@ -35,7 +39,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div ref={this.myRef}>
         <Router>
           <HeaderComponent />
           <Switch>
