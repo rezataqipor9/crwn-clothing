@@ -24,7 +24,7 @@ const CollectionItem = ({ item,addItem,cardItem}) => {
   );
 };
 const MapStateToProps=(state)=>({
-  cardItem:state.isShow.cardItem
+  cardItem:state.cart.cardItem
 })
 
 export default connect(MapStateToProps,{addItem})(CollectionItem);

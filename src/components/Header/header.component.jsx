@@ -7,7 +7,7 @@ import { connect} from "react-redux";
 import ShoppingIcon from '../shppingIcon/shoppingIcon'
 import CardDropDown from '../card-dropdown/card-dropdown'
 const HeaderComponent = ({ currentUser,isShow }) => {
-  console.log("isshow",isShow)
+  
   return (
     <>
       <div className="header">
@@ -38,9 +38,9 @@ const HeaderComponent = ({ currentUser,isShow }) => {
     </>
   );
 };
-const MapStateToProps = ({user,isShow}) => ({
+const MapStateToProps = ({user,cart}) => ({
   currentUser: user.currentUser,
-  isShow:isShow.isShow
+  isShow:cart.isShow
 });
 
 export default connect(MapStateToProps)(HeaderComponent);

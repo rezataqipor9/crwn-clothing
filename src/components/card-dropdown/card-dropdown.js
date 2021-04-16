@@ -15,9 +15,7 @@ const CardDropDown = ({cardItem}) => {
     );
 }
 const MapStateToProps = (state) => ({
-  
-  
-  cardItem:state.isShow.cardItem
+  cardItem:state.cart.cardItem
 
 });
 export default connect(MapStateToProps)(CardDropDown);
