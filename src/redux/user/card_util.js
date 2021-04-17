@@ -14,4 +14,10 @@ export const addItemToCart = (cartItems, cartItemToAdd) => {
   
     return [...cartItems, { ...cartItemToAdd, quantity: 1 }];
   };
-  
+  export const EliminateCart=(cardItems,actionPayload)=>{
+    const exist=cardItems.find(item=>item.id===actionPayload.id)
+    if (exist.quantity===1) {
+      return cardItems.filter(item=>item.id!==actionPayload.id )
+    }
+    return cardItems.map(item=>item.id===actionPayload.id?{...item, quantity:item.quantity-1}:item)
+  }
