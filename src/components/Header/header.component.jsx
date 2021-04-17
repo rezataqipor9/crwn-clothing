@@ -6,6 +6,9 @@ import { ReactComponent as Logo } from "../../assets/crown.svg";
 import { connect} from "react-redux";
 import ShoppingIcon from '../shppingIcon/shoppingIcon'
 import CardDropDown from '../card-dropdown/card-dropdown'
+import {selectToggle} from '../../redux/user/cart.selector'
+import {selectUser} from '../../redux/user/user-selector'
+import {createStructuredSelector} from 'reselect'
 const HeaderComponent = ({ currentUser,isShow }) => {
   
   return (
@@ -38,9 +41,9 @@ const HeaderComponent = ({ currentUser,isShow }) => {
     </>
   );
 };
-const MapStateToProps = ({user,cart}) => ({
-  currentUser: user.currentUser,
-  isShow:cart.isShow
+const MapStateToProps =createStructuredSelector ({
+  currentUser: selectUser,
+  isShow:selectToggle
 });
 
 export default connect(MapStateToProps)(HeaderComponent);

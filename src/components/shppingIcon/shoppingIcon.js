@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { ReactComponent as Shppingicon } from "../../assets/11.2 shopping-bag.svg";
 import { isDropDown } from "../../redux/user/user-action";
 import "./shoppingIcon_style.scss";
+import {createStructuredSelector} from 'reselect'
 import { selectCardCount } from "../../redux/user/cart.selector";
 const ShoppingIcon = ({ isDropDown, cardItem }) => {
   return (
@@ -15,10 +16,10 @@ const ShoppingIcon = ({ isDropDown, cardItem }) => {
 // const  MapDispatchToProps =(dispatch)=>({
 //   isDropDown:()=>dispatch(isDropDown())
 // })
-const MapStateToProps = (state) => {
+const MapStateToProps = createStructuredSelector({
   
-  return {
-    cardItem: selectCardCount(state)
-  };
-};
+  
+    cardItem: selectCardCount
+  
+});
 export default connect(MapStateToProps, { isDropDown })(ShoppingIcon);
