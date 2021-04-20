@@ -11,6 +11,7 @@ import { connect } from "react-redux";
 import {selectUser} from './redux/user/user-selector'
 import { createStructuredSelector} from 'reselect'
 import CheckOut from './pages/CheckOut/checkOut'
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -47,9 +48,10 @@ class App extends Component {
           <HeaderComponent />
           <Switch>
             <Route exact path="/" component={HomePage} />
-            <Route exact path="/shop" component={ShopPage} />
+            <Route  path="/shop" component={ShopPage} />
             <Route exact path="/signin" render={()=>this.props.currentUser?<Redirect to='/'/>:<SignInAndSigup/>}  />
             <Route exact path='/CheckOut' component={CheckOut}/>
+             
           </Switch>
         </Router>
       </div>
@@ -58,7 +60,6 @@ class App extends Component {
 }
 
 const MapDispatchToProps = (dispatch) => ({
-  // setCurrentUser: user => dispatch(setCurrentUser(user)),
   setCurrentUser: user => dispatch(setCurrentUser(user))
 });
 const MapStateToProps=createStructuredSelector({
