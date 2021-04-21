@@ -6,6 +6,7 @@ import {
   addItem,
 } from "../../redux/user/user-action";
 import { connect } from "react-redux";
+import StripeButton from '../stripe-button/stripe-button'
 const CheckOutItem = ({  carditem,EliminateCart,addItem,
   ClearItemFromCart
 }) => {
@@ -30,8 +31,9 @@ const CheckOutItem = ({  carditem,EliminateCart,addItem,
       <div onClick={() => ClearItemFromCart({ id })} className="remove-button">
         {" "}
         &#10060;
+        </div>
+        <StripeButton price={price}/>
       </div>
-    </div>
   );
 };
 
